@@ -1,17 +1,14 @@
 #[Title]#
 %vuln.vuln_type%
 
-#[Attack Class]#
+#[Attack_Class]#
 %vuln.attack_class%
 
-#[Attack Type]#
+#[Attack_Type]#
 %vuln.attack_type%
 
-#[Attack Score]#
+#[Attack_Score]#
 %vuln.attack_score%
-
-#[Attack Value]#
-%vuln.attack_value%
 
 #[Method]#
 %vuln.vuln_method%
@@ -22,6 +19,18 @@
 #[Recommendation]#
 %vuln.recommendation%
 
+#[ScanDate]#
+%vuln.scan_date%
+
+#[HTML_Entity_Attacked]#
+%vuln.html_entity_attacked%
+
+#[Original_Response_Code]%
+%vuln.statistically_prevalent_original_response_code%
+
+#[Confidence]#
+%vuln.confidence%
+
 #[CweId]#
 %vuln.cwe_id%
 
@@ -30,6 +39,12 @@
 
 #[DISSA_ASC]#
 %vuln.dissa_asc%
+
+#[WASC]#
+%vuln.wasc%
+
+#[OVAL]#
+%vuln.oval%
 
 #[OWASP2007]#
 %vuln.owasp2007%
@@ -40,5 +55,19 @@
 #[OWASP2013]#
 %vuln.owasp2013%
 
-#[OVAL]#
-%vuln.oval%
+#[OWASP2017]#
+%vuln.owasp2017%
+
+#[Defence_BL]#
+PcreRegex: %vuln.pcre_regex_bl%
+ModSecurity: %vuln.mod_security_bl%
+Snort: %vuln.snort_bl%
+Imperva: %vuln.imperva_bl%
+
+#[Defense_WL]#
+PcreRegex: %vuln.pcre_regex_wl%
+ModSecurity: %vuln.mod_security_wl%
+Snort: %vuln.snort_wl%
+Imperva: %vuln.imperva_wl%
+
+
