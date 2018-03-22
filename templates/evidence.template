@@ -19,7 +19,7 @@
 #[attackpostparams]#
 %evidence.attack_post_params%
 
-#[attackmatched_tring]#
+#[attackmatchedstring]#
 %evidence.attack_matched_string%
 
 #[attackrequest]#

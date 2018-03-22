@@ -1,3 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VulnSummary>
+<AppVersion>7.0.033.1</AppVersion>
+<ScanName>Example</ScanName>
+<Metadata></Metadata>
+<ScanStarted>2018-03-09 09:40:50</ScanStarted>
+<ScanDuration>01:25:23</ScanDuration>
+<ScanEnded>2018-03-09 11:06:13</ScanEnded>
+<UTCOffset>-5</UTCOffset>
+<ResourcesCrawled>654</ResourcesCrawled>
+<NumberOfRequests>29419</NumberOfRequests>
+<NumberOfFailedRequests>9</NumberOfFailedRequests>
+	<VulnList>
 <Vuln>
 	<DbId>12F3E8EB183249F6B99039D2E0F6AB1B</DbId>
 	<ParentDbId>00000000000000000000000000000000</ParentDbId>
@@ -135,3 +148,5 @@
 		</Attack>
 	</AttackList>
 </Vuln>
+	</VulnList>
+</VulnSummary>
