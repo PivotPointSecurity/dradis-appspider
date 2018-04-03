@@ -23,7 +23,10 @@
 %evidence.attack_matched_string%
 
 #[attackrequest]#
-%evidence.attack_request%
+bc.. %evidence.attack_request%
 
 #[attackresponse]#
-%evidence.attack_response%
+bc.. %evidence.attack_response%
+
+#[originalvalue]#
+%evidence.original_value%

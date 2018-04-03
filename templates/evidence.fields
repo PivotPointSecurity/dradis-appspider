@@ -7,6 +7,7 @@ evidence.attack_response
 evidence.attack_value
 evidence.attack_vuln_url
 evidence.benign
+evidence.original_value
 evidence.vuln_param
 evidence.vuln_url
 evidence.web_site
