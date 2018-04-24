@@ -148,5 +148,584 @@
 		</Attack>
 	</AttackList>
 </Vuln>
+<Vuln>
+<DbId>B768D0CB2C0A41098840153F562D106C</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<ScanName>ExampleApplication</ScanName>
+<WebSite>https://test.example.com:443</WebSite>
+<WebSiteIP>1.2.3.4</WebSiteIP>
+<VulnType>Browser Cache directive (leaking sensitive information)</VulnType>
+<VulnUrl>https://test.example.com/images/landing/pie-chart_direct-access.svg</VulnUrl>
+<NormalizedUrl>https://test.example.com/images/landing/pie-chart_direct-access.svg</NormalizedUrl>
+<MatchedString><![CDATA[Expires: Sat, 14 Apr 2018 19:40:38 GMT
+Cache-Control: max-age=5184000]]></MatchedString>
+<NormalizedPostParams></NormalizedPostParams>
+<VulnParam></VulnParam>
+<ParameterName>N/A</ParameterName>
+<HtmlEntityAttacked>URL</HtmlEntityAttacked>
+<ModuleId>E33B272027B844D5BBB8EDE541983474</ModuleId>
+<AttackType>Browser Cache Directive</AttackType>
+<AttackScore>2-Low</AttackScore>
+<AttackValue>N/A</AttackValue>
+<OriginalValue>N/A</OriginalValue>
+<Method>N/A</Method>
+<RootCauseId>6CD1F2ECFD568DCEC25A7CFFA68B2896</RootCauseId>
+<LuxorRootCauseId>0E23144FF65EA6AFA04A0812F92D91CB</LuxorRootCauseId>
+<FindingDbId>3B638ECC950B4437BCA8A6C9BACE7BFE</FindingDbId>
+<Description><![CDATA[
+        <p>
+        The response browser cache headers allow response caching. If the response contains sensitive information then it may be leaked into the browser cache.
+        </p>
+        <p>
+        By default, a response is cacheable if the requirements of the request method, request header fields, and the response status indicate that it is cacheable. 
+        Finally, unless specifically constrained by a cache-control directive, a caching system MAY always store a successful response as a cache entry, 
+        MAY return it without validation if it is fresh, and MAY return it after successful validation. If there is neither a cache validator nor an explicit expiration time associated with a response, 
+        we do not expect it to be cached, but certain caches MAY violate this expectation (for example, when little or no network connectivity is available). 
+        A client can usually detect that such a response was taken from a cache by comparing the Date header to the current time. 
+        Therefore, the browser has a capability to temporarily store some of the pages browsed. These cached files are stored in a folder. 
+        When we ask for these pages again, the browser displays them from its cache. Logging out from an application obviously does not clear the browser cache of any sensitive information 
+        that might have been stored.
+        </p>]]></Description>
+<Recommendation><![CDATA[
+      <p>
+      Update Cache-Control http header to include no-store directive. The purpose of this directive is to prevent the inadvertent release or retention of sensitive information.
+      The suggested HTTP response headers are: <br/>
+        Cache-Control: no-cache, no-store <br/>
+        Expires: 0 <br/>
+        Pragma: no-cache <br/>
+      </p>]]></Recommendation>
+<Page>https://test.example.com/images/landing/pie-chart_direct-access.svg</Page>
+<Url>https://test.example.com/images/landing/pie-chart_direct-access.svg</Url>
+<VulnParamType>unknown</VulnParamType>
+<CrawlTraffic>UE9TVCAvaW5kZXgucGhwL...</CrawlTraffic>
+<CrawlTrafficTemplate>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficTemplate>
+<CrawlTrafficResponse>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficResponse>
+<AttackClass>Application Developer</AttackClass>
+<CweId>525</CweId>
+<CAPEC>1</CAPEC>
+<DISSA_ASC>3480</DISSA_ASC>
+<OWASP2007>9</OWASP2007>
+<OWASP2010>9</OWASP2010>
+<OWASP2013>6</OWASP2013>
+<OWASP2017>6</OWASP2017>
+<OVAL>0</OVAL>
+<WASC>0</WASC>
+<ScanDate>2018-02-13 17:11:18</ScanDate>
+<ScanEnd>2018-02-13 23:19:31</ScanEnd>
+<StatisticallyPrevalentOriginalResponseCode>200</StatisticallyPrevalentOriginalResponseCode>
+<Confidence>High</Confidence>
+<DefenseBL>
+<DbId>BF45CDE9882A4E8589A91D0B547A4D7A</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva></Imperva>
+</DefenseBL>
+<DefenseWL>
+<DbId>71F8C6C2C7944F0E958D51DD442E1AE4</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva></Imperva>
+</DefenseWL>
+<AttackList>
+<Attack>
+<DbId>86386ADAB51B4BE18E6613C6893EE171</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<AttackId>BROWSERCACHECHECK01</AttackId>
+<AttackValue></AttackValue>
+<AttackVulnUrl>https://test.example.com/images/landing/pie-chart_direct-access.svg</AttackVulnUrl>
+<AttackPostParams></AttackPostParams>
+<AttackMatchedString><![CDATA[Expires: Sat, 14 Apr 2018 19:40:38 GMT
+Cache-Control: max-age=5184000]]></AttackMatchedString>
+<AttackDescription></AttackDescription>
+<AttackConfigDescription>Browser Cache Directive</AttackConfigDescription>
+<AttackUserNotes></AttackUserNotes>
+<OriginalValue></OriginalValue>
+<OriginalResponseCode>200</OriginalResponseCode>
+</Attack>
+</AttackList>
+</Vuln>
+<Vuln>
+	<Vuln>
+<DbId>22E9CC2AA7C84BBD814ECB43170E5457</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<ScanName>ExampleApplication</ScanName>
+<WebSite>https://test.example.com:443</WebSite>
+<WebSiteIP>1.2.3.4</WebSiteIP>
+<VulnType>HttpOnly attribute</VulnType>
+<VulnUrl>https://test.example.com/index.php/saml/auth</VulnUrl>
+<NormalizedUrl>https://test.example.com/index.php/saml/auth</NormalizedUrl>
+<MatchedString>PHPSESSID=c63cee5955c92edf04bf618784ad8151; path=/</MatchedString>
+<NormalizedPostParams></NormalizedPostParams>
+<VulnParam>PHPSESSID</VulnParam>
+<ParameterName>PHPSESSID</ParameterName>
+<HtmlEntityAttacked></HtmlEntityAttacked>
+<ModuleId>BBFCB66779ED4E7292C08F19E9BB45DF</ModuleId>
+<AttackType>HttpOnly attribute not set</AttackType>
+<AttackScore>2-Low</AttackScore>
+<AttackValue></AttackValue>
+<OriginalValue>PHPSESSID=c63cee5955c92edf04bf618784ad8151; path=/</OriginalValue>
+<Method>GET</Method>
+<RootCauseId>F97A5E3EE2D70F486DA0FD995096DBB3</RootCauseId>
+<LuxorRootCauseId>B7B51CBFAB857CE6C47821A14C18AADE</LuxorRootCauseId>
+<FindingDbId>5BF52AE9F4714B26A9D24834469E163B</FindingDbId>
+<Description><![CDATA[<p>The HttpOnly attribute directs browsers to use cookies via the HTTP protocol only.  An HttpOnly cookie is not accessible via non-HTTP methods, such as calls via JavaScript (e.g., referencing "document.cookie"), and therefore cannot be stolen easily via cross-site scripting (a pervasive attack technique).</p>]]></Description>
+<Recommendation><![CDATA[<p>If the HttpOnly flag (optional) is included in the HTTP response header, the cookie cannot be accessed through client side script (again if the browser supports this flag). As a result, even if a cross-site scripting (XSS) flaw exists, and a user accidentally accesses a link that exploits this flaw, the browser (primarily Internet Explorer) will not reveal the cookie to a third party.</p>]]></Recommendation>
+<Page>https://test.example.com/index.php/saml/auth</Page>
+<Url>https://test.example.com/index.php/saml/auth</Url>
+<VulnParamType>unknown</VulnParamType>
+<CrawlTraffic>UE9TVCAvaW5kZXgucGhwL...</CrawlTraffic>
+<CrawlTrafficTemplate>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficTemplate>
+<CrawlTrafficResponse>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficResponse>
+<AttackClass>Application Developer</AttackClass>
+<CweId>79</CweId>
+<CAPEC>21</CAPEC>
+<DISSA_ASC>3110</DISSA_ASC>
+<OWASP2007>1</OWASP2007>
+<OWASP2010>2</OWASP2010>
+<OWASP2013>3</OWASP2013>
+<OWASP2017>3</OWASP2017>
+<OVAL>0</OVAL>
+<WASC>0</WASC>
+<ScanDate>2018-02-13 17:11:18</ScanDate>
+<ScanEnd>2018-02-13 23:19:31</ScanEnd>
+<StatisticallyPrevalentOriginalResponseCode>500</StatisticallyPrevalentOriginalResponseCode>
+<Confidence>High</Confidence>
+<DefenseBL>
+<DbId>BF45CDE9882A4E8589A91D0B547A4D7A</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva></Imperva>
+</DefenseBL>
+<DefenseWL>
+<DbId>71F8C6C2C7944F0E958D51DD442E1AE4</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva></Imperva>
+</DefenseWL>
+<AttackList>
+<Attack>
+<DbId>EE88F45897AB4A428869DCD0193DB031</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<AttackId>HttpOnly Cookie</AttackId>
+<AttackValue></AttackValue>
+<AttackVulnUrl>https://test.example.com/index.php/saml/auth</AttackVulnUrl>
+<AttackPostParams></AttackPostParams>
+<AttackMatchedString>PHPSESSID=c63cee5955c92edf04bf618784ad8151; path=/</AttackMatchedString>
+<AttackDescription></AttackDescription>
+<AttackConfigDescription>HttpOnly attribute not set</AttackConfigDescription>
+<AttackUserNotes></AttackUserNotes>
+<OriginalValue>PHPSESSID=c63cee5955c92edf04bf618784ad8151; path=/</OriginalValue>
+<OriginalResponseCode>500</OriginalResponseCode>
+</Attack>
+</AttackList>
+</Vuln>
+<Vuln>
+<DbId>A4FEC5575AF04AA69E4BDBA64E4D1836</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<ScanName>ExampleApplication</ScanName>
+<WebSite>https://test.example.com:443</WebSite>
+<WebSiteIP>1.2.3.4</WebSiteIP>
+<VulnType>SQL Injection</VulnType>
+<VulnUrl>https://test.example.com/index.php/welcome/login</VulnUrl>
+<NormalizedUrl>https://test.example.com/index.php/welcome/login?</NormalizedUrl>
+<MatchedString><![CDATA[SELECT parameter_name, parameter_value FROM utility_settings)");
+	console.log("     2  0.00109  0.00054  0.00053  0.00056    system.db.CDbCommand.query(SELECT user_id FROM mailing_token WHERE token = :token AND create_datetime >= CURDATE() - INTERVAL :age DAY. B]]></MatchedString>
+<NormalizedPostParams></NormalizedPostParams>
+<VulnParam>token</VulnParam>
+<ParameterName>token</ParameterName>
+<HtmlEntityAttacked>Query-Parameters</HtmlEntityAttacked>
+<ModuleId>B6F559D374B5451EB424A1C1FB264FA6</ModuleId>
+<AttackType>Single Quote (another)</AttackType>
+<AttackScore>4-High</AttackScore>
+<AttackValue>'</AttackValue>
+<OriginalValue></OriginalValue>
+<Method>GET</Method>
+<RootCauseId>2067FCEC9A567884B584CDCCFF0F2D5B</RootCauseId>
+<LuxorRootCauseId>CC0B7A3058208A72BEBA3526E9D3B2F1</LuxorRootCauseId>
+<FindingDbId>F60A9E2F8C7246D28B2098D3B91B3CFA</FindingDbId>
+<Description><![CDATA[A <a target="_blank" href="https://www.owasp.org/index.php/SQL_Injection">SQL injection</a> attack consists of insertion or "injection" of a SQL query via the input data from the client to the application. A successful SQL injection exploit can read sensitive data from the database, modify database data (Insert/Update/Delete), execute administration operations on the database (such as shutdown the DBMS), recover the content of a given file present on the DBMS file system and in some cases issue commands to the operating system. SQL injection attacks are a type of injection attack, in which SQL commands are injected into data-plane input in order to effect the execution of predefined SQL commands.
+<p>
+SQL injection errors occur when:
+<ol>
+<li>Data enters a program from an untrusted source.
+<li>The data used to dynamically construct a SQL query
+</ol>
+
+<p>
+<a target="_blank" href="https://www.owasp.org/index.php/SQL_Injection">SQL injection</a> has become a common issue with database-driven web sites. The flaw is easily detected, and easily exploited, and as such, any site or software package with even a minimal user base is likely to be subject to an attempted attack of this kind.
+<p>
+Essentially, the attack is accomplished by placing a meta character into data input to then place SQL commands in the control plane, which did not exist there before. This flaw depends on the fact that SQL makes no real distinction between the control and data planes.]]></Description>
+<Recommendation><![CDATA[
+<p> <a target="_blank" href="https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet"> SQL Injection</a> flaws are introduced when software developers create dynamic database queries that include user supplied input.
+<p>
+Primary Defenses:
+<ul>
+<li>Use of Prepared Statements (Parameterized Queries)<p>
+Parameterized queries force the developer to first define all the SQL code, and then pass in each parameter to the query later. This coding style allows the database to distinguish between code and data, regardless of what user input is supplied.
+
+Prepared statements ensure that an attacker is not able to change the intent of a query, even if SQL commands are inserted by an attacker.
+
+<li>Use of Stored Procedures<p>
+
+Stored procedures have the same effect as the use of prepared statements when implemented safely* which is the norm for most stored procedure languages. They require the developer to just build SQL statements with parameters which are automatically parameterized unless the developer does something largely out of the norm. The difference between prepared statements and stored procedures is that the SQL code for a stored procedure is defined and stored in the database itself, and then called from the application. Both of these techniques have the same effectiveness in preventing SQL injection so your organization should choose which approach makes the most sense for you.
+
+<li>Escaping all User Supplied Input<p>
+
+This technique is to escape user input before putting it in a query. However, this methodology is frail compared to using parameterized queries and we cannot guarantee it will prevent all SQL Injection in all situations. This technique should only be used, with caution, to retrofit legacy code in a cost effective way. Applications built from scratch, or applications requiring low risk tolerance should be built or re-written using parameterized queries.<p>
+Each DBMS supports one or more character escaping schemes specific to certain kinds of queries. If you then escape all user supplied input using the proper escaping scheme for the database you are using, the DBMS will not confuse that input with SQL code written by the developer, thus avoiding any possible SQL injection vulnerabilities.
+
+Full details on <a target="_blank" href="https://www.owasp.org/index.php/ESAPI">ESAPI are available at OWASP.</a>
+
+</ul>
+Additional Defenses:
+<ul>
+<li>Least Privilege<p>
+
+To minimize the potential damage of a successful SQL injection attack, you should minimize the privileges assigned to every database account in your environment. Do not assign DBA or admin type access rights to your application accounts. We understand that this is easy, and everything just ‘works’ when you do it this way, but it is very dangerous. Start from the ground up to determine what access rights your application accounts require, rather than trying to figure out what access rights you need to take away. Make sure that accounts that only need read access are only granted read access to the tables they need access to. If an account only needs access to portions of a table, consider creating a view that limits access to that portion of the data and assigning the account access to the view instead, rather than the underlying table. Rarely, if ever, grant create or delete access to database accounts.
+
+<li>White List Input Validation<p>
+Input validation can be used to detect unauthorized input before it is passed to the SQL query. For more information please see the <a target="_blank" href="https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet">OWASP Input Validation Cheat Sheet</a>. Proceed with caution here. Validated data is not necessarily safe to insert into SQL queries via string building. 
+</ul>
+</li>
+</ul>]]></Recommendation>
+<Page>https://test.example.com/index.php/welcome/login</Page>
+<Url>https://test.example.com/index.php/welcome/login</Url>
+<VulnParamType>unknown</VulnParamType>
+<CrawlTraffic>UE9TVCAvaW5kZXgucGhwL...</CrawlTraffic>
+<CrawlTrafficTemplate>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficTemplate>
+<CrawlTrafficResponse>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficResponse>
+<AttackClass>Database Administrator</AttackClass>
+<CweId>89</CweId>
+<CAPEC>66</CAPEC>
+<DISSA_ASC>3540</DISSA_ASC>
+<OWASP2007>2</OWASP2007>
+<OWASP2010>1</OWASP2010>
+<OWASP2013>1</OWASP2013>
+<OWASP2017>1</OWASP2017>
+<OVAL>1033</OVAL>
+<WASC>19</WASC>
+<ScanDate>2018-02-13 17:11:18</ScanDate>
+<ScanEnd>2018-02-13 23:19:31</ScanEnd>
+<StatisticallyPrevalentOriginalResponseCode>200</StatisticallyPrevalentOriginalResponseCode>
+<Confidence>High</Confidence>
+<DefenseBL>
+<DbId>BF45CDE9882A4E8589A91D0B547A4D7A</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva>sql-injection</Imperva>
+</DefenseBL>
+<DefenseWL>
+<DbId>71F8C6C2C7944F0E958D51DD442E1AE4</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva></Imperva>
+</DefenseWL>
+<AttackList>
+<Attack>
+<DbId>1B348EDB646E4BAC8DC3AEF3D69EB17F</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<AttackId>DBI01</AttackId>
+<AttackValue>'</AttackValue>
+<AttackVulnUrl>https://test.example.com/index.php/welcome/login</AttackVulnUrl>
+<AttackPostParams></AttackPostParams>
+<AttackMatchedString><![CDATA[SELECT user_id FROM mailing_token WHERE token = :token AND create_datetime >= CURDATE() - INTERVAL :age DAY. B]]></AttackMatchedString>
+<AttackDescription></AttackDescription>
+<AttackConfigDescription>Single Quote</AttackConfigDescription>
+<AttackUserNotes></AttackUserNotes>
+<OriginalValue></OriginalValue>
+<OriginalResponseCode>200</OriginalResponseCode>
+<AttackRequestList>
+<AttackRequest>
+<DbId>CA223AB450714EA3B0B90E33E35CC40B</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<Request>UE9TVCAvaW5kZXgucGhwL...</Request>
+<Response>UE9TVCAvaW5kZXgucGhwL...</Response>
+<Benign>0</Benign>
+</AttackRequest>
+</AttackRequestList>
+</Attack>
+<Attack>
+<DbId>3ABD934F2AA8436DA540726936DCCA24</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<AttackId>DBI04</AttackId>
+<AttackValue>%27</AttackValue>
+<AttackVulnUrl>https://test.example.com/index.php/welcome/login</AttackVulnUrl>
+<AttackPostParams></AttackPostParams>
+<AttackMatchedString><![CDATA[SELECT parameter_name, parameter_value FROM utility_settings)");
+	console.log("     2  0.00112  0.00056  0.00053  0.00059    system.db.CDbCommand.query(SELECT user_id FROM mailing_token WHERE token = :token AND create_datetime >= CURDATE() - INTERVAL :age DAY. B]]></AttackMatchedString>
+<AttackDescription></AttackDescription>
+<AttackConfigDescription>Single Quote (ASCII)</AttackConfigDescription>
+<AttackUserNotes></AttackUserNotes>
+<OriginalValue></OriginalValue>
+<OriginalResponseCode>200</OriginalResponseCode>
+<AttackRequestList>
+<AttackRequest>
+<DbId>CDA87F5841444EF49A40BDCE4A60B6CA</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<Request>UE9TVCAvaW5kZXgucGhwL...</Request>
+<Response>UE9TVCAvaW5kZXgucGhwL...</Response>
+<Benign>0</Benign>
+</AttackRequest>
+</AttackRequestList>
+</Attack>
+<Attack>
+<DbId>6F6CBC98CC0145CA833F396126F2CAAB</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<AttackId>DBI03</AttackId>
+<AttackValue>"</AttackValue>
+<AttackVulnUrl>https://test.example.com/index.php/welcome/login</AttackVulnUrl>
+<AttackPostParams></AttackPostParams>
+<AttackMatchedString><![CDATA[SELECT user_id FROM mailing_token WHERE token = :token AND create_datetime >= CURDATE() - INTERVAL :age DAY. B]]></AttackMatchedString>
+<AttackDescription></AttackDescription>
+<AttackConfigDescription>Double Quote</AttackConfigDescription>
+<AttackUserNotes></AttackUserNotes>
+<OriginalValue></OriginalValue>
+<OriginalResponseCode>200</OriginalResponseCode>
+<AttackRequestList>
+<AttackRequest>
+<DbId>4633C6133D8549CFB10BDD5ED278817B</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<Request>UE9TVCAvaW5kZXgucGhwL...</Request>
+<Response>UE9TVCAvaW5kZXgucGhwL...</Response>
+<Benign>0</Benign>
+</AttackRequest>
+</AttackRequestList>
+</Attack>
+<Attack>
+<DbId>4300A7F1B57143DFBC101398A2538788</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<AttackId>DBI02</AttackId>
+<AttackValue>'</AttackValue>
+<AttackVulnUrl>https://test.example.com/index.php/welcome/login</AttackVulnUrl>
+<AttackPostParams></AttackPostParams>
+<AttackMatchedString><![CDATA[SELECT parameter_name, parameter_value FROM utility_settings)");
+	console.log("     2  0.00109  0.00054  0.00053  0.00056    system.db.CDbCommand.query(SELECT user_id FROM mailing_token WHERE token = :token AND create_datetime >= CURDATE() - INTERVAL :age DAY. B]]></AttackMatchedString>
+<AttackDescription></AttackDescription>
+<AttackConfigDescription>Single Quote (another)</AttackConfigDescription>
+<AttackUserNotes></AttackUserNotes>
+<OriginalValue></OriginalValue>
+<OriginalResponseCode>200</OriginalResponseCode>
+<AttackRequestList>
+<AttackRequest>
+<DbId>D2A030413A7243A2851F63A7FD00B711</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<Request>UE9TVCAvaW5kZXgucGhwL...</Request>
+<Response>UE9TVCAvaW5kZXgucGhwL...</Response>
+<Benign>0</Benign>
+</AttackRequest>
+</AttackRequestList>
+</Attack>
+</AttackList>
+</Vuln>
+<Vuln>
+<DbId>E6DEC0EFFEBA44CDAA0D904EF3FEC8CC</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<ScanName>ExampleApplication</ScanName>
+<WebSite>https://test.example.com:443</WebSite>
+<WebSiteIP>1.2.3.4</WebSiteIP>
+<VulnType>Session Fixation</VulnType>
+<VulnUrl>https://test.example.com/index.php/home/</VulnUrl>
+<NormalizedUrl>https://test.example.com/index.php/home/</NormalizedUrl>
+<MatchedString><![CDATA[HTTP/1.1 200 Found
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Connection: close
+Date: Tue, 13 Feb 2018 22:34:37 GMT
+Pragma: no-cache
+Content-Length: 1308
+Content-Type: text/html; charset=UTF-8
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Location: https://test.example.com/index.php/welcome
+Server: Apache]]></MatchedString>
+<NormalizedPostParams></NormalizedPostParams>
+<VulnParam></VulnParam>
+<ParameterName>N/A</ParameterName>
+<HtmlEntityAttacked>URL</HtmlEntityAttacked>
+<ModuleId>DB1340E1857540219DF84A6A9DC0494C</ModuleId>
+<AttackType>Server accepts fixed Session ID in a cookie</AttackType>
+<AttackScore>3-Medium</AttackScore>
+<AttackValue>N/A</AttackValue>
+<OriginalValue>N/A</OriginalValue>
+<Method>N/A</Method>
+<RootCauseId>6C086A28438414D284A0332287ECEEEE</RootCauseId>
+<LuxorRootCauseId>228DB0350A7A7EBDEFCD1F2DBCB2C3E4</LuxorRootCauseId>
+<FindingDbId>4179BE04D00B47ADB340FB5BA057CEF1</FindingDbId>
+<Description><![CDATA[<p>Session Fixation is an attack that permits an attacker to hijack a valid user session. It fits within the more general framework of attacks that exploit a violation of best practice where the server authenticates by changing (promoting) the authentication state of the session ID cookie value so it can continue to use the same cookie value.  Servers that accept session data in the URL or in POST data in particular are vulnerable.  The attack follows this pattern:</p><p><li>Attacker ascertains session ID name, value.  Either the server accepts anything or the attacker visits the site and snoops the response.</li><li>Attacker entices victim to visit the site with extra payload in the URL to the effect of "https://www.thesite.com/?SID=ascertained_value."</li><li>Victim logs in and that SID gets promoted.</li><li>Attacker now has authenticated access.</li></p>]]></Description>
+<Recommendation><![CDATA[<p>This attack can be largely avoided by changing the session ID when users log in.  Also, do NOT accept session ID's in GET or POST parameters; use HTTP cookies at the very least to encode session information.  These two rules of thumb establish a sufficient level of security for most applications. However, for those willing to incur further development and maintenance effort for higher security, the SID can be regenerated on a per-request basis and also, on systems that support it, SSL/TLS session identifiers may be used.</p>]]></Recommendation>
+<Page>https://test.example.com/index.php/home/</Page>
+<Url>https://test.example.com/index.php/home/</Url>
+<VulnParamType>unknown</VulnParamType>
+<CrawlTraffic>UE9TVCAvaW5kZXgucGhwL...</CrawlTraffic>
+<CrawlTrafficTemplate>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficTemplate>
+<CrawlTrafficResponse>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficResponse>
+<AttackClass>Application Developer</AttackClass>
+<CweId>384</CweId>
+<CAPEC>61</CAPEC>
+<DISSA_ASC>3405</DISSA_ASC>
+<OWASP2007>7</OWASP2007>
+<OWASP2010>3</OWASP2010>
+<OWASP2013>2</OWASP2013>
+<OWASP2017>2</OWASP2017>
+<OVAL>0</OVAL>
+<WASC>0</WASC>
+<ScanDate>2018-02-13 17:11:18</ScanDate>
+<ScanEnd>2018-02-13 23:19:31</ScanEnd>
+<StatisticallyPrevalentOriginalResponseCode>200</StatisticallyPrevalentOriginalResponseCode>
+<Confidence>Medium</Confidence>
+<DefenseBL>
+<DbId>BF45CDE9882A4E8589A91D0B547A4D7A</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva></Imperva>
+</DefenseBL>
+<DefenseWL>
+<DbId>71F8C6C2C7944F0E958D51DD442E1AE4</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva></Imperva>
+</DefenseWL>
+<AttackList>
+<Attack>
+<DbId>647ECE854A644BF0A9718628004D8C66</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<AttackId>SessionFixation_01</AttackId>
+<AttackValue>PHPSESSID=x7oo3ugk;a64b84d4419675c8425cb15c2f5fda28=</AttackValue>
+<AttackVulnUrl>https://test.example.com/index.php/home/</AttackVulnUrl>
+<AttackPostParams></AttackPostParams>
+<AttackMatchedString><![CDATA[HTTP/1.1 302 Found
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Connection: close
+Date: Tue, 13 Feb 2018 22:34:37 GMT
+Pragma: no-cache
+Content-Length: 1308
+Content-Type: text/html; charset=UTF-8
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Location: https://test.example.com/index.php/welcome
+Server: Apache]]></AttackMatchedString>
+<AttackDescription>Server failed to issue new session cookie.</AttackDescription>
+<AttackConfigDescription>Server accepts fixed Session ID in a cookie</AttackConfigDescription>
+<AttackUserNotes></AttackUserNotes>
+<OriginalValue>e5cjqtoj0kgqejt2f1hhmst8p5</OriginalValue>
+<OriginalResponseCode>200</OriginalResponseCode>
+<AttackRequestList>
+<AttackRequest>
+<DbId>3B30A07B5AF240DEB9D1AD1D31E191C0</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<Request>UE9TVCAvaW5kZXgucGhwL...==</Request>
+<Response>UE9TVCAvaW5kZXgucGhwL...</Response>
+<Benign>0</Benign>
+</AttackRequest>
+</AttackRequestList>
+</Attack>
+</AttackList>
+</Vuln>
+<Vuln>
+<DbId>54F51B5E593B40268E5389666F2F1C2F</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<ScanName>ExampleApplication</ScanName>
+<WebSite>https://test.example.com:443</WebSite>
+<WebSiteIP>1.2.3.4</WebSiteIP>
+<VulnType>Form re-submission</VulnType>
+<VulnUrl>https://test.example.com/index.php/logout/login</VulnUrl>
+<NormalizedUrl>https://test.example.com/index.php/logout/login</NormalizedUrl>
+<MatchedString>HTTP/1.1 200 OK</MatchedString>
+<NormalizedPostParams></NormalizedPostParams>
+<VulnParam></VulnParam>
+<ParameterName>N/A</ParameterName>
+<HtmlEntityAttacked>URL</HtmlEntityAttacked>
+<ModuleId>FD28B5D41E064D37B5543CE22BBC6306</ModuleId>
+<AttackType>Form re-submissions from Browser Cache</AttackType>
+<AttackScore>2-Low</AttackScore>
+<AttackValue>N/A</AttackValue>
+<OriginalValue>N/A</OriginalValue>
+<Method>N/A</Method>
+<RootCauseId>9C87C885FBA212F155CF80BDFC4A0BA3</RootCauseId>
+<LuxorRootCauseId>5E763DEC0CC863D357C3EA8CD0735778</LuxorRootCauseId>
+<FindingDbId>833A3F9F5C7D482F97063DFCD2BDB4EB</FindingDbId>
+<Description><![CDATA[<p>When a web form is submitted to a server through an HTTP POST request, a web user that attempts to refresh the server response in certain user agents can cause the contents of the original HTTP POST request to be resubmitted, possibly causing undesired results, such as a duplicate web purchase.</p>]]></Description>
+<Recommendation><![CDATA[<p>To avoid this problem, many web developers use the PRG pattern - instead of returning a web page directly, the POST operation returns a redirection command.<br/>
+        Post/Redirect/Get (PRG) is a web development design pattern that prevents some duplicate form submissions, creating a more intuitive interface for user agents (users). PRG implements bookmarks and the refresh button in a predictable way that does not create duplicate form submissions.</p>]]></Recommendation>
+<Page>https://test.example.com/index.php/logout/login</Page>
+<Url>https://test.example.com/index.php/logout/login</Url>
+<VulnParamType>unknown</VulnParamType>
+<CrawlTraffic>UE9TVCAvaW5kZXgucGhwL...</CrawlTraffic>
+<CrawlTrafficTemplate>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficTemplate>
+<CrawlTrafficResponse>UE9TVCAvaW5kZXgucGhwL...</CrawlTrafficResponse>
+<AttackClass>Best Practice</AttackClass>
+<CweId>319</CweId>
+<CAPEC>0</CAPEC>
+<DISSA_ASC>3250</DISSA_ASC>
+<OWASP2007>9</OWASP2007>
+<OWASP2010>9</OWASP2010>
+<OWASP2013>6</OWASP2013>
+<OWASP2017>6</OWASP2017>
+<OVAL>0</OVAL>
+<WASC>0</WASC>
+<ScanDate>2018-02-13 17:11:18</ScanDate>
+<ScanEnd>2018-02-13 23:19:31</ScanEnd>
+<StatisticallyPrevalentOriginalResponseCode>200</StatisticallyPrevalentOriginalResponseCode>
+<Confidence>High</Confidence>
+<DefenseBL>
+<DbId>BF45CDE9882A4E8589A91D0B547A4D7A</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva></Imperva>
+</DefenseBL>
+<DefenseWL>
+<DbId>71F8C6C2C7944F0E958D51DD442E1AE4</DbId>
+<ParentDbId>0303FA34673146D0A1862838053DEF53</ParentDbId>
+<PcreRegex></PcreRegex>
+<ModSecurity></ModSecurity>
+<Snort></Snort>
+<Imperva></Imperva>
+</DefenseWL>
+<AttackList>
+<Attack>
+<DbId>0A3E544D49AE414094ECDB5432C0D333</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<AttackId>FormResubmission</AttackId>
+<AttackValue></AttackValue>
+<AttackVulnUrl>https://test.example.com/index.php/logout/login</AttackVulnUrl>
+<AttackPostParams></AttackPostParams>
+<AttackMatchedString>HTTP/1.1 200 OK</AttackMatchedString>
+<AttackDescription></AttackDescription>
+<AttackConfigDescription>Form re-submissions from Browser Cache</AttackConfigDescription>
+<AttackUserNotes></AttackUserNotes>
+<OriginalValue></OriginalValue>
+<OriginalResponseCode>200</OriginalResponseCode>
+</Attack>
+<Attack>
+<DbId>4423BF7F9E324A9AB68991523A2670A6</DbId>
+<ParentDbId>00000000000000000000000000000000</ParentDbId>
+<AttackId>FormResubmission</AttackId>
+<AttackValue></AttackValue>
+<AttackVulnUrl>https://test.example.com/index.php/logout/login</AttackVulnUrl>
+<AttackPostParams></AttackPostParams>
+<AttackMatchedString>HTTP/1.1 200 OK</AttackMatchedString>
+<AttackDescription></AttackDescription>
+<AttackConfigDescription>Form re-submissions from Browser Cache</AttackConfigDescription>
+<AttackUserNotes></AttackUserNotes>
+<OriginalValue></OriginalValue>
+<OriginalResponseCode>200</OriginalResponseCode>
+</Attack>
+</AttackList>
+</Vuln>
 	</VulnList>
 </VulnSummary>
