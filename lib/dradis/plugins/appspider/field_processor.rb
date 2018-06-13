@@ -1,8 +1,8 @@
-module Dradis::Plugins::APPSpider
+module Dradis::Plugins::Appspider
   class FieldProcessor < Dradis::Plugins::Upload::FieldProcessor
 
     def post_initialize(args={})
-      @app_object = ::APPSpider::Vuln.new(data)
+      @app_object = ::Appspider::Vuln.new(data)
     end
 
     def value(args={})

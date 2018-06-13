@@ -1,4 +1,4 @@
-module APPSpider
+module Appspider
   # This class represents each of the vulnerabilities reported in the
   # APPSpider VulnerabilitiesSummary.xml file as <Vuln> entities.
   #
